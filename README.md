@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Configuration required:
 
-Things you may want to cover:
+  * Ruby version : 2.6.1
+  * Rails version: 5.2.1
+  * Databse used: sqlite(default)
 
-* Ruby version
+### About Application 
+1. Added a form which accepts urls (like browser tabs search bar)
+2. Once clicked on go, the search is saved in history
+3. It can be seen using 'Show history' option.
+4. Added button to go see previous/next.
+5. When clicked on previous - old history gets populated in search tab
+6. When clicked on next - newer history gets populated in search tab
 
-* System dependencies
+### How to run application
+  - bundle install
+  - rake db:setup
+  - rails server
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
