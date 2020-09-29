@@ -1,0 +1,12 @@
+<table border="1" class="table table-bordered">
+  <tr>
+    <th>URLs</th>
+    <th>Time</th>
+  </tr>
+  <% BrowserHistory.order(created_at: :desc).each do |history_entry| %>
+    <tr>
+      <td><%= history_entry.url %></td>
+      <td><%= history_entry.created_at %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,29 @@
+<div>
+  <h3>Browser History Simulator</h3>
+  <%= form_for @browser_history, url: {action: "create"} do |f| %>
+    <%=flash[:notice] %>
+    <br>
+    <a><i class="prevButton arrow left"></i></a>
+    <a><i class="nextButton arrow right"></i></a>
+    <%= f.text_field :url %>
+    <%= f.hidden_field :id %>
+    <%= f.submit "Go"%>
+  <% end %>
+  <button class="historyButton">Show history</button>
+</div>
+
+
+<div class="historyTable" style="display: none">
+  <h3>Browser History List</h3>
+  <% if BrowserHistory.count > 0 %>
+    <table>
+      <% BrowserHistory.order(created_at: :desc).each do |history_entry| %>
+        <tr>
+          <td><%= history_entry.url %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p> No history yet </p>
+  <% end %>
+</div>
